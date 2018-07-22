@@ -1,0 +1,25 @@
+plugins {
+    id "eu.mihosoft.vmftext" version "0.1.1"
+}
+
+// configure vmf-text
+vmfText {
+    version = '0.1.1'
+}
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'eu.mihosoft.vmftext.tutorial01.Main'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.8'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+task run(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = mainClass
+}
