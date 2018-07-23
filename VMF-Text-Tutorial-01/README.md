@@ -3,7 +3,7 @@
 [HOME](https://github.com/miho/VMF-Text-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Text-Tutorials/blob/master/VMF-Text-Tutorial-02/README.md)
 
 
-##WIP
+## WIP
 
 ## Defining your First Model
 
