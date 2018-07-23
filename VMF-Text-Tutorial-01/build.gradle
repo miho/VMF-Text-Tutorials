@@ -1,10 +1,5 @@
 plugins {
-    id "eu.mihosoft.vmftext" version "0.1.1"
-}
-
-// configure vmf-text
-vmfText {
-    version = '0.1.1'
+    id "eu.mihosoft.vmftext" version "0.1.2.5"
 }
 
 sourceCompatibility = '1.8'
