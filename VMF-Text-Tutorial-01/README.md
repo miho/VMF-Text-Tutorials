@@ -21,13 +21,12 @@ plugins {
   id "eu.mihosoft.vmftext" version "0.1.1" // use latest version
 }
 ```
-Now we can (optionally) configure VMF-Text and specify which version shall be used:
+Now we can (optionally) configure VMF-Text and specify which versions shall be used:
 
 ```gradle
 vmfText {
-    version      = '0.1.1' // use desired VMF version
-    vmfVersion   = '0.1'   //
-    antlrVersion = '4.7.1  //
+    vmfVersion   = '0.1'   // (runtime version)
+    antlrVersion = '4.7.1  // (runtime version)
 }
 ```
 
@@ -42,7 +41,7 @@ or
     
 Here's the grammar file, which is located in `src/main/vmf-text/eu/mihosoft/vmftext/tutorial01/ArrayLang.g4` :    
 
-```java
+```antlr
 grammar ArrayLang;
 
 array:  '(' values+=INT (',' values+=INT)* ')' EOF;
@@ -67,21 +66,21 @@ TypeMap() {
 The source directories of our tutorial project looks like this:
 
 ```
-src
-├── main/java ...
-│         └── ...
-│   
-└── vmf/java
-          ├── /eu/mihosoft/vmf/tutorial01/vmfmodel/Parent.java
-          └── ...
+└── src
+    └── main
+        ├── java/eu/mihosoft/vmftext/tutorial01/Main.java
+        │   
+        └── vmf-text/eu/mihosoft/vmftext/tutorial01/ArrayLang.g4
 ```
+
+That is, the `ArrayLang.g4` is located in the package `eu.mihosoft.vmftext.tutorial01`, just like the `Main` class.
 
 ### Running the Code Generator
 
-After we created our first model definition we are ready to run the code generator via the `vmfGenModelSource`task, e.g. via
+After we created our first grammar we are ready to run the code generator via the `vmfTextGenCode`task, e.g. via
 
 ```
-./gradlew vmfGenModelSources
+./gradlew vmfTextGenCode
 ```
 
 VMF should show the following output:
@@ -98,6 +97,9 @@ To use the code just use the generated code from your regular Java code, e.g, in
 ```java
 package eu.mihosoft.vmf.tutorial01;
 
+import eu.mihosoft.vmftext.tutorial01.parser.ArrayLangModelParser;
+import eu.mihosoft.vmftext.tutorial01.unparser.ArrayLangModelUnparser;
+
 public class Main {
 
     /**
@@ -105,18 +107,23 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        // create a new parent instance
-        Parent parent = Parent.newInstance();
-        
-        // set parent's name
-        parent.setName("My Name");
-        
-        // check that name is set
-        if("My Name".equals(parent.getName())) {
-          System.out.println("name is correctly set");
-        } else {
-          System.out.println("something went wrong :(");
-        }
+        // create a model parser
+        ArrayLangModelParser parser = new ArrayLangModelParser();
+
+        // parse the array '(1,2,3')
+        String code = "( 1 , 2 , 3 )";
+        System.out.println("-> original array: " + code);
+        ArrayLangModel model = parser.parse(code);
+
+        // add a value at the end of the array
+        model.getRoot().getValues().add(4);
+
+        // create an unparser for writing arrays to string
+        ArrayLangModelUnparser unparser = new ArrayLangModelUnparser();
+
+        // unparse the modified array
+        String newCode = unparser.unparse(model);
+        System.out.println("-> modified array: " + newCode);
         
     }
 }
