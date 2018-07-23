@@ -18,7 +18,7 @@ Since VMF-Text comes with a convenient Gradle plugin it's easy to setup. We just
 
 ```gradle
 plugins {
-  id "eu.mihosoft.vmftext" version "0.1.1" // use latest version
+  id "eu.mihosoft.vmftext" version "0.1.2.6" // use latest version
 }
 ```
 Now we can (optionally) configure VMF-Text and specify which versions shall be used:
