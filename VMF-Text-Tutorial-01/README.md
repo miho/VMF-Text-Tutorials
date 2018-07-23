@@ -87,7 +87,7 @@ VMF should show the following output:
 
 ```
 > Task :vmfTextGenCode
-  -> processing file: /Users/miho/Documents/GitHub/VMF-Text-Tutorials/VMF-Text-Tutorial-01/src/main/vmf-text/eu/mihosoft/vmftext/tutorial01/ArrayLang.g4
+  -> processing file: VMF-Text-Tutorials/VMF-Text-Tutorial-01/src/main/vmf-text/eu/mihosoft/vmftext/tutorial01/ArrayLang.g4
 
 // a lot of grammar related compile output and finally:
 
