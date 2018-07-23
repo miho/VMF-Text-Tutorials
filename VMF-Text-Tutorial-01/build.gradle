@@ -1,5 +1,5 @@
 plugins {
-    id "eu.mihosoft.vmftext" version "0.1.2.5"
+    id "eu.mihosoft.vmftext" version "0.1.2.6"
 }
 
 sourceCompatibility = '1.8'
