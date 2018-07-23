@@ -26,7 +26,7 @@ Now we can (optionally) configure VMF-Text and specify which versions shall be u
 ```gradle
 vmfText {
     vmfVersion   = '0.1'   // (runtime version)
-    antlrVersion = '4.7.1  // (runtime version)
+    antlrVersion = '4.7.1' // (runtime version)
 }
 ```
 
@@ -39,7 +39,7 @@ or
 
     (102,-3,57)
     
-Here's the grammar file, which is located in `src/main/vmf-text/eu/mihosoft/vmftext/tutorial01/ArrayLang.g4` :    
+Here's the grammar file that accepts array string as shown above:
 
 ```antlr
 grammar ArrayLang;
@@ -86,13 +86,19 @@ After we created our first grammar we are ready to run the code generator via th
 VMF should show the following output:
 
 ```
-> Task :vmfGenModelSources
- -> generating code for vmf model in package: eu/mihosoft/vmf/tutorial01/vmfmodel
+> Task :vmfTextGenCode
+  -> processing file: /Users/miho/Documents/GitHub/VMF-Text-Tutorials/VMF-Text-Tutorial-01/src/main/vmf-text/eu/mihosoft/vmftext/tutorial01/ArrayLang.g4
+
+// a lot of grammar related compile output and finally:
+
+> Task :run
+-> original array: ( 1 , 2 , 3 )
+-> modified array: ( 1 , 2 , 3 , 4 )
 ```
 
-### Using the generated API
+### Using the Code
 
-To use the generated code, just use use it as any regular Java API, e.g, use it from your main class in `src/main/java`. Here's an example:
+To use the code just use the generated code from your regular Java code, e.g, in `src/main/java`:
 
 ```java
 package eu.mihosoft.vmf.tutorial01;
@@ -129,9 +135,6 @@ public class Main {
 }
 ```
 
-Congrats, you have successfully created your first VMF-Text language API. If you are lazy you can get the full project [here](https://github.com/miho/VMF-Text-Tutorials/tree/master/VMF-Text-Tutorial-01).
+Congrats, you have successfully created your first VMF model. If you are lazy you can get the full project [here](https://github.com/miho/VMF-Tutorials/tree/master/VMF-Tutorial-01).
 
-[HOME](https://github.com/miho/VMF-Text-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Text-Tutorials/blob/master/VMF-Text-Tutorial-02/README.md)
-
-
-
+[HOME](https://github.com/miho/VMF-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Tutorials/blob/master/VMF-Tutorial-02/README.md)
