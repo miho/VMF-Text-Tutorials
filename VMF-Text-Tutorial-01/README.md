@@ -1,6 +1,9 @@
 # VMF Tutorial 1
 
-[HOME](https://github.com/miho/VMF-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Tutorials/blob/master/VMF-Tutorial-02/README.md)
+[HOME](https://github.com/miho/VMF-Text-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Text-Tutorials/blob/master/VMF-Text-Tutorial-02/README.md)
+
+
+##WIP
 
 ## Defining your First Model
 
@@ -8,7 +11,7 @@
 
 In this tutorial you will learn how to
 
-- setup a Gradle project for VMF
+- setup a Gradle project for VMF-Text
 - create a basic model
 - use the generated implementation
 
@@ -18,19 +21,21 @@ Since VMF comes with a convenient Gradle plugin it's easy to setup. We just have
 
 ```gradle
 plugins {
-  id "eu.mihosoft.vmf" version "0.1.1" // use latest version
+  id "eu.mihosoft.vmftext" version "0.1.1" // use latest version
 }
 ```
-Now we can configure VMF and specify which version shall be used:
+Now we can (optionally) configure VMF and specify which version shall be used:
 
 ```gradle
-vmf {
-    version = '0.1' // use desired VMF version
+vmfText {
+    version      = '0.1.1' // use desired VMF version
+    vmfVersion   = '0.1'   //
+    antlrVersion = '4.7.1  //
 }
 ```
 
-The plugin adds a source set `src/vmf/java` to our Gradle project intended for the model definition. 
-In our first example we want to generate code for a very basic model. It just consists of one interface `Parent` with a single String property `name`. Here's how we can define the model as Java interface:
+The plugin adds a source set `src/main/vmf-text/` to our Gradle project intended for the grammar files and model definitions. 
+In our first example we want to generate code for a very basic model. It just consists of a single
 
 ```java
 package eu.mihosoft.vmf.tutorial01.vmfmodel;
