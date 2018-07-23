@@ -98,7 +98,7 @@ VMF should show the following output:
 
 ### Using the Code
 
-To use the code just use the generated code from your regular Java code, e.g, in `src/main/java`:
+To use the API just use the generated code from your regular Java code, e.g, in `src/main/java`:
 
 ```java
 package eu.mihosoft.vmf.tutorial01;
