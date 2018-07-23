@@ -90,9 +90,9 @@ VMF should show the following output:
  -> generating code for vmf model in package: eu/mihosoft/vmf/tutorial01/vmfmodel
 ```
 
-### Using the Code
+### Using the generated API
 
-To use the code just use the generated code from your regular Java code, e.g, in `src/main/java`:
+To use the generated code, just use use it as any regular Java API, e.g, use it from your main class in `src/main/java`. Here's an example:
 
 ```java
 package eu.mihosoft.vmf.tutorial01;
@@ -129,9 +129,9 @@ public class Main {
 }
 ```
 
-Congrats, you have successfully created your first VMF model. If you are lazy you can get the full project [here](https://github.com/miho/VMF-Tutorials/tree/master/VMF-Tutorial-01).
+Congrats, you have successfully created your first VMF-Text language API. If you are lazy you can get the full project [here](https://github.com/miho/VMF-Text-Tutorials/tree/master/VMF-Text-Tutorial-01).
 
-[HOME](https://github.com/miho/VMF-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Tutorials/blob/master/VMF-Tutorial-02/README.md)
+[HOME](https://github.com/miho/VMF-Text-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Text-Tutorials/blob/master/VMF-Text-Tutorial-02/README.md)
 
 
 
