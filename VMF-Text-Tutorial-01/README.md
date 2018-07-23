@@ -1,4 +1,4 @@
-# VMF Tutorial 1
+# VMF-Text Tutorial 1
 
 [HOME](https://github.com/miho/VMF-Text-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Text-Tutorials/blob/master/VMF-Text-Tutorial-02/README.md)
 
