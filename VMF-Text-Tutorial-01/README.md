@@ -135,6 +135,46 @@ public class Main {
 }
 ```
 
+Parsing a string is something you could have done with plain ANTLR. So why do we need this? First, we get al the benefits from [VMF](https://github.com/miho/VMF). The object graph isfully observable, supports undo/redo, cloning and a lot more. But most importantly, we get **unparsing** support. That is, we can write a modified version of the model back into its textual representation. Now let's go through the code from above:
+
+First, we create a parser:
+
+```java
+ArrayLangModelParser parser = new ArrayLangModelParser();
+```
+
+Now, we parse a string:
+
+```java
+String code = "( 1 , 2 , 3 )";
+System.out.println("-> original array: " + code);
+ArrayLangModel model = parser.parse(code);
+```
+
+This yields a model instance which we can modify. Let's add a number to the end of the array:
+
+```java
+model.getRoot().getValues().add(4);
+```
+
+To create a textual representation of the modified model, we just have to create an unparser object
+
+```java
+ArrayLangModelUnparser unparser = new ArrayLangModelUnparser();
+```
+
+and call the unparse method
+
+```java
+String newCode = unparser.unparse(model);
+```
+
+Finally, we can print the text:
+
+```java
+System.out.println("-> modified array: " + newCode);
+```
+
 Congrats, you have successfully created your first VMF-Text language model + API. If you are lazy you can get the full project [here](https://github.com/miho/VMF-Text-Tutorials/tree/master/VMF-Text-Tutorial-01).
 
 [HOME](https://github.com/miho/VMF-Tutorials/blob/master/README.md) [NEXT ->](https://github.com/miho/VMF-Tutorials/blob/master/VMF-Tutorial-02/README.md)
