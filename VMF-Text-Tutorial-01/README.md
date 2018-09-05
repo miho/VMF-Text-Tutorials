@@ -63,7 +63,7 @@ TypeMap() {
 */
 ```
 
-The source directories of our tutorial project looks like this:
+The source directories of our tutorial project look like this:
 
 ```
 └── src
