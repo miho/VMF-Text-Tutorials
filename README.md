@@ -14,7 +14,7 @@ This collection of tutorials gives an introduction to VMF and its use in regular
 
 ## Introduction
 
-VMF-Text is a powerful framework for grammar-based language modeling: give it a labeled ANTLR4 grammar and it will generate a rich and clean API (using on VMF) for (un)parsing and transforming custom textual languages. **The complete API is derived from just a single ANTLR4 grammar file!**
+VMF-Text is a powerful framework for grammar-based language modeling: give it a labeled ANTLR4 grammar and it will generate a rich and clean API (based on [VMF](https://github.com/miho/VMF)) for (un)parsing and transforming custom textual languages. **The complete API is derived from just a single ANTLR4 grammar file!**
 
 <img src="https://github.com/miho/VMF-Text/blob/master/resources/img/vmf-text-01.jpg">
 
