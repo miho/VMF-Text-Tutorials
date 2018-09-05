@@ -135,7 +135,7 @@ public class Main {
 }
 ```
 
-Parsing a string is something you could have done with plain ANTLR. So why do we need this? First, we get al the benefits from [VMF](https://github.com/miho/VMF). The object graph isfully observable, supports undo/redo, cloning and a lot more. But most importantly, we get **unparsing** support. That is, we can write a modified version of the model back into its textual representation. Now let's go through the code from above:
+Parsing a string is something you could have done with plain ANTLR. So why do we need this? First, we get all the benefits of [VMF](https://github.com/miho/VMF). The object graph is fully observable, supports undo/redo, cloning and a lot more. But most importantly, we get **unparsing** support. That is, we can write a modified version of the model back into its textual representation. Now let's go through the code from above:
 
 First, we create a parser:
 
